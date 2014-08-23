@@ -1,0 +1,114 @@
+v2.5:
+Added: VAS can now display specific items/weapons/magazines for each ammobox placed (more indept configuration).
+Added: Version number in right side of title bar.
+Added: New Russian localizations.
+Added: Alphabetical sorting.
+Changed: The quick magazines box now checks against the config for restricted / magazines.
+Changed: Default save slots bumped from 10 to 15.
+Changed: VASP now ends when it completes it's preloading process.
+Fixed: Attachments restricted were showing in the quick attachments section.
+Fixed: Error in expression < _this call VAS_fnc_quickAddDrag; > Error Type Script, expected Bool
+
+v2.4:
+Added: The new attachment list box checks against the config for restricted attachments.
+Added: French Translations for new prompts & Other localizations added in earlier builds (need more).
+Changed: Listbox scrollbar resources changed (looks slightly different).
+Fixed: Auto-scroll issue with scrollbars (Related to above change).
+
+v2.3:
+Added: Ability to add items to specific containers (Drag from Virtual ammobox to the container icon).
+Added: Listbox of compatible attachments (Semi-working read notes).
+Changed: Updated various resources for the new A3 1.10 patch (I think it's 1.10?)
+Fixed: Couldn't remove a weapon that was stored in the backpack.
+Fixed: Missing semicolon (;) error.
+
+v2.2:
+Fixed: Load on Respawn feature was not working.
+Changed: Magazines now load into their saved containers for loadouts.
+Added: VASP (Virtual Ammobox System Preloader), read notes about it!
+
+v2.1:
+Added: Support for new compatibleItems class structure (Thanks to Robalo).
+Added: Ability to transfer saved loadouts to other players in MP (They must accept).
+Added: Visual indicator of Uniform/vest/backpack load with tooltip showing % in being full. (ToDo make it drag & drop).
+Added: Config option to disable the 'Vas hasn't finished loading' check. It's a config option for those that use a LOT of addons.
+Changed: VAS_fnc_handleItem can now put items in exact container from a save (Except Magazines, they're broken in stable).
+Fixed: Using quick magazine adding no longer breaks filter displays.
+Fixed: Localization error on 'restricted item'.
+Fixed: Disabling 'Load on respawn' didn't actually disable it.
+
+v2.0:
+Fixed: Map,Compass,etc wouldn't show in VAS.
+Changed: Load on respawn shouldn't conflict with any other 'respawn' EVH.
+Changed: Some German translations so they fit, thanks to MemphisBelle.
+Added: More things to be localized. New translations needed.
+Added: More translations for VAS in Russian,Czech and Spanish.
+
+v1.9a:
+Fixed: Backpacks wouldn't show in Your Current Gear.
+Added: Italian localization / Translation (Thanks to ramius86 on BIS Forums).
+
+v1.9:
+Fixed: Some weapons wouldn't display in 'Your Current Gear'.
+Changed: Added some additional code changes to fix & prevent 'VAS hasn't finished loading'
+Changed: All Items (Vests/uniforms/headgear/attachments/misc) will display even if a class has the same name.
+Changed: Some other things but forgot what they were but must of been important!
+Added: Portuguese localization / Translation (Thanks to Ficc on BIS forums!)
+
+v1.8:
+Fixed: Saved loadouts with a laser designator wouldn't load the battery.
+Fixed: Saved loadouts wouldn't load UAV Terminals
+Fixed: Glasses / Goggles can now be saved in uniforms/vests/backpacks.
+Fixed: Some backpacks came with items already in them.
+Changed: Updated German translations.
+Changed: Initialization method in CfgFunctions changed to postInit to try and fix initialization issues.
+
+v1.7:
+Fixed: Couldn't remove bincoulars.
+Changed: Integrated needed parts of Kronzky STR Library into VAS, fixing compability issues, read notes.
+Added: French & Polish translations (read notes).
+Changed: Tiddied up some of the code in the backend.
+
+v1.6:
+Fixed: Couldn't add binoculars
+Added: Localization support for VAS.
+
+v1.4:
+Changed: 'forced' was changed to 'preInit' in CfgFunctions.
+Fixed: Fixed issue with gear on loadouts sometimes missing.
+Changed: Some changes to the initialization process it try and fix 'VAS hasn't finished loading yet.'.
+Added: If restricted items are listed in the config.sqf upon loading a loadout that item will not be added.
+
+v1.3:
+Fixed: Broken Commands that were changed to something else from Alpha->Beta transition
+Changed: Backend stuff that was used to fetch magazines from the gun, changed to new commands added in.
+Changed: Some functions changed to the call method instead of spawn.
+Added: Full support of adding attachments to the all weapon types (Weapons on you that support the item).
+
+v1.2:
+Changed: Tweaks to VAS_fnc_handleItem for better handling in future.
+Changed: Tweaks to VAS_fnc_fetchCfgDetails (Should display Ghillie suits till BIS fixes the config entries).
+Changed: Tweaks to VAS_fnc_buildConfig for future use, Range finder and other binocs should show as a weapon.
+Changed: Tweaks to UI Experience, should no longer flash when adding/removing items.
+Added: Ability to remove all magazines of a type or items of a type.
+Added: Double clicking on a weapon/item/whatever adds it.
+Added: Double clicking on a weapon/item/whatever removes it.
+Changed: Tweaks to the save/load display, items are now grouped and show in quantity thanks to naong.
+Changed: Tweaks to load option to prevent excessive magazines being added when spamming Load.
+
+v1.1:
+Fixed: VAS couldn't add the range finder or any other 'binocular' based item besides the actual binoculars.
+Changed: Converted VAS's function initialization to CfgFunctions (VAS now initializes when mission is started, thanks to Tyrghen on Armaholic for the tip).
+Changed: VAS's file path changed from gear to VAS to make it stand out more (Read notes about the new Description.ext when adding VAS 1.1 to your mission).
+Changed: Highlighted selections should no longer flash between black and white (now less annoying and easier to read).
+Changed: When setting disableLoadSave to true VAS now changes over to missionNamespace so saves are only persistent in the missionNamespace.
+Changed: Tweaks to VAS_fnc_handleItem for loading of saved loadouts (enabling it to save gps's,uniforms/vests within the uniform/vest).
+Added: New configuration parameter vas_customslots allowing mission maker to enable the amount of saved slots (was actually in 1.0).
+
+v1.0:
+Changed: Recoded the entire backend
+Fixed: When saving a loadout with a weapon in the backend, it wouldn't be loaded.
+Fixed: When saving a loadout with a gun that had a GL it would load in with a missing magazine.
+Added: Confirmation to deleting a saved loadout.
+Added: When selecting a loadout through the save menu the saved loadouts name is now loaded in the text field.
+Added: When selecting a weapon you can now double click on the magazine on the left information window to quickly add the magazine.

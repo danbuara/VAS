@@ -20,29 +20,18 @@ And your done! Just look at the ammo box, scroll and click Virtual Ammobox. The 
 
 Credits & thanks:
 Kronzky - For his string function library
-
 SaMatra - For help with UI Resources and Russian Translation
-
 Dslyecxi - For his Paper doll giving insight on how to detect item types.
-
 Tyrghen on Armaholic - For giving me the tip about CfgFunctions
-
 naong - For his code tweaks to the Load / Save display.
-
 Coding from armaholic - Translation of VAS from English->German
-
 El nabot from Armaholic - Translation of VAS from English->French
-
 czesiek77 from Armaholic - Translation of VAS from English->Polish
-
 Ficc from BIS Forums - Translation of VAS from English->Portuguese
-
 ramius86 on BIS Forums - Translation of VAS from English->Italian
-
 RabsRincon on Armaholic - Translation of VAS from English->Spanish
-
 Bakarda on BIS/Armaholic - Translation of VAS from English->Czech
-
 MemphisBelle on BIS Forums - Translation Tweaks for German to fit.
-
 Robalo on BIS Forums - Giving code changes to help support new compatibleItems class structure.
+
+(The list goes on but I lost track and I apologize).

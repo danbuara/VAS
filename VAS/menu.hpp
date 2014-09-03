@@ -1,7 +1,6 @@
 /*
 	Author: Bryan "Tonic" Boardwine
 	Website: www.iamtonic.co
-	Use of the VAS system is permitted although modification and distribution must be approved by Tonic.
 */
 
 #include "common.hpp"
@@ -339,7 +338,7 @@ class VAS_Diag {
 		class VersionNumber : Title {
 			idc = 2404;
 			style = 1;
-			text = "v2.6";
+			text = "v2.7";
 		};
 
 		class ButtonAddG : VAS_RscButtonMenu

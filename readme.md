@@ -26,7 +26,7 @@ this addAction["<t color='#ff1111'>Virtual Ammobox</t>", "VAS\open.sqf"];
 That's it! Now when you look at your new ammunition box in-game, the mouse-wheel menu will present you with the "Virtual Ammobox" item. The underlying interface is localized into 8 languages, and is intuitive enough to skip the introductions.
 
 ###License <a name="license"></a>
-Use of Virtual Ammobox System (VAS) in missions published on [Steam Workshop](http://steamcommunity.com/app/107410/workshop/?l=english) is allowed. Publishing the script by itself is NOT! VAS is a a tool for mission designers to integrate into their own work, and is not intended to be released separately (as is) via Steam Workshop.
+Use of Virtual Ammobox System (VAS) in missions published on [Steam Workshop](http://steamcommunity.com/app/107410/workshop/?l=english) is allowed. Publishing the script by itself is NOT! VAS is a a tool for mission designers to integrate into their own work, and is not intended to be released separately (as is) via Steam Workshop or elsewhere.
 
 ###Special Thanks
 * [Dslyecxi](http://dslyecxi.com/) for his Paper Doll script, giving me insight on how to detect item types.

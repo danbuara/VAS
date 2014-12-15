@@ -1,11 +1,24 @@
-##Virtual Ammobox System&nbsp;&nbsp;&nbsp;&nbsp;[![](http://img.shields.io/badge/Version-2.6-green.svg?style=flat)](https://github.com/TAWTonic/VAS/blob/master/changelog.txt) [![](http://img.shields.io/badge/Download-1_MB-blue.svg?style=flat)](http://www.armaholic.com/page.php?id=19134) [![](http://img.shields.io/badge/License-Custom-red.svg?style=flat)](#license)
+<p align="center">
+  <h1 align="center">Virtual Ammobox System</h3><br />
+  <a href="https://raw.githubusercontent.com/TAWTonic/VAS/master/changelog.txt">
+    <img src="http://img.shields.io/badge/Version-2.6-green.svg?style=flat" alt="VAS changelog">
+  </a>
+    <a href="http://www.armaholic.com/page.php?id=19134">
+    <img src="http://img.shields.io/badge/Download-1_MB-blue.svg?style=flat" alt="VAS download">
+  </a>
+    <a href="#license">
+    <img src="http://img.shields.io/badge/License-Custom-red.svg?style=flat" alt="VAS license">
+  </a>
+</p>
+
 Thank you for using Virtual Ammobox System (VAS). This script allows you to equip, configure and customize the default loadout gear using an easy to use GUI.
 
-VAS was originally written by [Tonic](https://github.com/TAWTonic) to compliment the release of a specific ARMA 3 mission. The stated goals for its development were to:
-* Provide an alternative to the native solution from [BIS](https://www.bistudio.com/) that cuts back on time spent browsing in-game inventory.
-* Deal with the associated lag issues.
+VAS was originally written by [Tonic](https://github.com/TAWTonic) to compliment the release of only one particular Arma 3 mission. However, after the script's initial success and a wide adoption within community, he made the source code to VAS available publicly - for everyone to use, modify and contribute to its ongoing development.
 
-After the script's initial success and a wide adoption within ARMA community, Tonic has made the source code to VAS available to public - for everyone to use, modify and contribute to its ongoing development.
+###Goals
+* Provide a viable alternative to the native solution from [BIS](https://www.bistudio.com/).
+* Cut back on the time spent browsing in-game inventory.
+* Deal with the associated lag issues.
 
 ###Installation
 The script is very easy to integrate. To add VAS to your mission, simply copy it to your mission folder and edit out your **description.ext** with the following:

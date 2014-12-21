@@ -120,8 +120,6 @@ if(_bool) then
 				};
 			};
 			
-			systemChat format["Gun: %1 | itemInfo: %2",_isgun,_details select 5];
-			
 			if(_isgun) then
 			{
 				if(!_ispack && _override) exitWith {}; //It was in the vest/uniform, try to close to prevent it overriding stuff... (Actual weapon and not an item)

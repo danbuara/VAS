@@ -104,13 +104,12 @@ if(_bool) then
 			if(_toUniform) exitWith {player addItemToUniform _item;};
 			if(_toVest) exitWith {player addItemToVest _item;};
 			if(_ispack) exitWith {player addItemToBackpack _item;};
-			if((_details select 15)) exitWith {player addItem _item;};
 			
 			if((_details select 4) in [1,2,4,5,4096]) then
 			{
 				if((_details select 4) == 4096) then
 				{
-					if((_details select 5) == -1) then
+					if((_details select 5) == -1 && !((_details select 15))) then
 					{
 						_isgun = true;
 					};
@@ -120,6 +119,8 @@ if(_bool) then
 					_isgun = true;
 				};
 			};
+			
+			systemChat format["Gun: %1 | itemInfo: %2",_isgun,_details select 5];
 			
 			if(_isgun) then
 			{
@@ -145,7 +146,7 @@ if(_bool) then
 						}
 							else
 						{
-							if(_override) then
+							if(_override OR (getNumber(configFile >> "CfgWeapons" >> _item >> "detectRange") == -1)) then
 							{
 								player addItem _item;
 							}

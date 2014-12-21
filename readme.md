@@ -9,6 +9,11 @@
     <a href="#license">
     <img src="http://img.shields.io/badge/License-Custom-red.svg?style=flat" alt="VAS license">
   </a>
+  </a>
+    <a href="https://github.com/TAWTonic/VAS/issues">
+    <img src="http://img.shields.io/github/issues/TAWTonic/VAS.svg?label=Issues&style=flat" alt="VAS issues">
+  </a>
+  
 </p>
 
 Thank you for using Virtual Ammobox System (VAS). This script allows you to equip, configure and customize the default loadout gear using an easy to use GUI.

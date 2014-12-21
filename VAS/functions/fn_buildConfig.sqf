@@ -30,6 +30,7 @@ switch(_cfg) do
 			_scope = _details select 3;
 			_type = _details select 4;
 			_itemInfo = _details select 5;
+			_AGMItem = _details select 15;
 			_base = configName(inheritsFrom (configFile >> "CfgWeapons" >> _class));
 			
 			_str = [_class,4] call VAS_fnc_KRON_StrLeft;
@@ -42,12 +43,9 @@ switch(_cfg) do
 					{
 						if(_picture != "" && _displayName != "") then
 						{
-							if(_itemInfo == 616 && _type == 4096) then
-							{
+							if(_type == 4096 && (_itemInfo == 616 OR _AGMItem)) then {
 								_ret2 set[count _ret2,_class];
-							}
-								else
-							{
+							} else {
 								if(!(_displayName in _temp) && !(_base in VAS_r_weapons) && !(_class in VAS_r_weapons)) then
 								{
 									_temp set[count _temp,_displayName];

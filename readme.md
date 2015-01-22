@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">Virtual Ammobox System</h3><br />
   <a href="https://raw.githubusercontent.com/TAWTonic/VAS/master/changelog.txt">
-    <img src="http://img.shields.io/badge/Version-2.75-green.svg?style=flat" alt="VAS changelog">
+    <img src="http://img.shields.io/badge/Version-2.8-green.svg?style=flat" alt="VAS changelog">
   </a>
     <a href="http://www.armaholic.com/page.php?id=19134">
     <img src="http://img.shields.io/badge/Download-1_MB-blue.svg?style=flat" alt="VAS download">

@@ -1,4 +1,12 @@
-v2.6
+v2.8:
+Fixed: Resolved the UI rendering issues.
+
+v2.7:
+Fixed: Restored compatibility with items specific to AGM.
+Changed: Removed a VAS debug message.
+Added: The amount of localized Russian strings is now on par with English (courtesy of Tourorist).
+
+v2.6:
 Changed: forceAddUniform now added in so you can freely wear any uniform without being “naked”.
 Changed: TFAR radio patch from Robalo, to properly remove TFAR radios from being added.
 Changed: Exit condition for VAS preloading in the config builder.
@@ -16,7 +24,7 @@ Fixed: Error in expression < _this call VAS_fnc_quickAddDrag; > Error Type Scrip
 
 v2.4:
 Added: The new attachment list box checks against the config for restricted attachments.
-Added: French Translations for new prompts & Other localizations added in earlier builds (need more).
+Added: French translations for new prompts & other localizations added in earlier builds (need more).
 Changed: Listbox scrollbar resources changed (looks slightly different).
 Fixed: Auto-scroll issue with scrollbars (related to the above change).
 
@@ -72,7 +80,7 @@ v1.7:
 Fixed: Couldn't remove binoculars.
 Changed: Integrated needed parts of Kronzky STR Library into VAS, fixing compatibility issues, read notes.
 Added: French & Polish translations (read notes).
-Changed: Tidied up some of the backend code.
+Changed: Tidied up select backend code.
 
 v1.6:
 Fixed: Couldn't add binoculars
@@ -104,7 +112,7 @@ Changed: Tweaks to load option to prevent excessive magazines being added when s
 v1.1:
 Fixed: VAS couldn't add the range finder or any other 'binocular' based item besides the actual binoculars.
 Changed: Converted the function initialization of VAS to CfgFunctions (it now initializes when mission is started, thanks to Tyrghen on Armaholic for the tip).
-Changed: VAS's file path changed from gear to VAS to make it stand out more (Read notes about the new description.ext when adding VAS 1.1 to your mission).
+Changed: The file path changed from gear to VAS, to make it stand out more (read notes about the new description.ext when adding VAS 1.1 to your mission).
 Changed: Highlighted selections should no longer flash between black and white (now less annoying and easier to read).
 Changed: When setting disableLoadSave to true VAS now changes over to missionNamespace so saves are only persistent in the missionNamespace.
 Changed: Tweaks to VAS_fnc_handleItem for loading of saved loadouts (enabling it to save GPS, and other loadout within the uniform/vest).

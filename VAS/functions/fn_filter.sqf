@@ -36,14 +36,12 @@ _ret = [];
 				switch(typeName _filter) do {
 					case "ARRAY": {
 						if(_type in _filter) then {
-							if(_x == "AGM_Bandage") then {systemChat str _AGMItem;};
 							_ret set [count _ret,_x];
 						};
 					};
 					
 					case "SCALAR": {
 						if(_type == _filter) then {
-							if(_x == "AGM_Bandage") then {systemChat str _AGMItem;};
 							_ret set [count _ret,_x];
 						};
 					};

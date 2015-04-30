@@ -108,7 +108,7 @@ if(count (_configInfo select 14) > 0) then {
 				};
 			};
 		};
-	} foreach ((_configInfo select 10) + (_configInfo select 11) + (_configInfo select 12));
+	} foreach ((_configInfo select 10) + (_configInfo select 11) + (_configInfo select 12) + (_configInfo select 16));
 };
 
 //Remove attachments that are not suppose to be in it.

@@ -268,16 +268,56 @@ if(_bool) then
 						};
 					};
 					
-					case 201:
-					{
-						if(_ispack) then
-						{
+					case 201: {
+						if(_ispack) then {
 							player addItemToBackpack _item;
-						}
-							else
-						{
+						} else {
 							private["_type"];
 							_type = [_item,201] call VAS_fnc_accType;
+							if(_ongun) then
+							{
+								switch (_type) do
+								{
+									case 1: { player addPrimaryWeaponItem _item; };
+									case 2: { player addSecondaryWeaponItem _item; };
+									case 3: { player addHandgunItem _item; };
+								};
+							}
+								else
+							{
+								if(_override) then
+								{
+									player addItem _item;
+								}
+									else
+								{
+									[] call VAS_fnc_accPrompt;
+									waitUntil {!isNil {vas_prompt_choice}};
+									if(vas_prompt_choice) then
+									{
+										switch (_type) do
+										{
+											case 1: { player addPrimaryWeaponItem _item; };
+											case 2: { player addSecondaryWeaponItem _item; };
+											case 3: { player addHandgunItem _item; };
+										};
+									}
+										else
+									{
+										player addItem _item;
+									};
+									vas_prompt_choice = nil;
+								};
+							};
+						};
+					};
+					
+					case 302: {
+						if(_ispack) then {
+							player addItemToBackpack _item;
+						} else {
+							private["_type"];
+							_type = [_item,302] call VAS_fnc_accType;
 							if(_ongun) then
 							{
 								switch (_type) do

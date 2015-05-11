@@ -2,7 +2,7 @@
 	File: fn_fetchCfg.sqf
 	Version Edit: 2.5
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	I honestly can't remember, something about handling configs/presets/something.
 */
@@ -30,7 +30,13 @@ switch(_request) do
 			if(isNil {VAS_pre_weapons}) then {["CfgWeapons"] call VAS_fnc_buildConfig;};
 			if(!isNil {_filter}) then
 			{
-				_list = [VAS_pre_weapons,_filter] call VAS_fnc_filter;
+				_list = missionNamespace getVariable [format["VAS_pre_weapons_%1", _filter], []];
+
+				if !(count _list > 0) then {
+					_list = [VAS_pre_weapons,_filter] call VAS_fnc_filter;
+
+					missionNamespace setVariable [format["VAS_pre_weapons_%1", _filter], _list];
+				};
 			}
 				else
 			{
@@ -38,7 +44,7 @@ switch(_request) do
 			};
 		};
 	};
-	
+
 	case "mags":
 	{
 		if(!isNil "VAS_box_magazines") exitWith {_list = VAS_box_magazines};
@@ -52,7 +58,7 @@ switch(_request) do
 			_list = VAS_pre_magazines;
 		};
 	};
-	
+
 	case "items":
 	{
 		if(!isNil "VAS_box_items") exitWith {_list = VAS_box_items};
@@ -72,7 +78,13 @@ switch(_request) do
 			if(isNil {VAS_pre_items}) then {["CfgWeapons"] call VAS_fnc_buildConfig;};
 			if(!isNil {_filter}) then
 			{
-				_list = [VAS_pre_items,_filter] call VAS_fnc_filter;
+				_list = missionNamespace getVariable [format["VAS_pre_items_%1", _filter], []];
+
+				if !(count _list > 0) then {
+					_list = [VAS_pre_items,_filter] call VAS_fnc_filter;
+
+					missionNamespace setVariable [format["VAS_pre_items_%1", _filter], _list];
+				};
 			}
 				else
 			{
@@ -80,7 +92,7 @@ switch(_request) do
 			};
 		};
 	};
-	
+
 	case "packs":
 	{
 		if(!isNil "VAS_box_backpacks") exitWith {_list = VAS_box_backpacks;};
@@ -94,7 +106,7 @@ switch(_request) do
 			_list = VAS_pre_backpacks;
 		};
 	};
-	
+
 	case "glass":
 	{
 		if(!isNil "VAS_box_goggles") exitWith {_list = VAS_box_goggles;};

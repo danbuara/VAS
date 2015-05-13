@@ -94,3 +94,16 @@ vas_r_magazines = [];
 vas_r_items = [];
 //Goggles to remove from VAS
 vas_r_glasses = [];
+
+/*
+	BACK END VARIABLEs, DO NOT TOUCH OR I KILL YOU!
+*/
+VAS_pre_items_uniforms = [];
+VAS_pre_items_vests = [];
+VAS_pre_items_header = [];
+VAS_pre_items_attachments = [];
+VAS_pre_items_misc = [];
+VAS_pre_weapons_rifles = [];
+VAS_pre_weapons_heavy = [];
+VAS_pre_weapons_launchers = [];
+VAS_pre_weapons_pistols = [];

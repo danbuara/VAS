@@ -1,21 +1,22 @@
+#include "macro.sqf"
 /*
-	@version: 2.7
-	@file_name: build_config.sqf
-	@file_edit: 9/3/2014
-	@file_author: TAW_Tonic
-	@file_description: If preload is enabled, it will build our preloaded config, otherwise fetches everything from the config.
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	If preload is enabled, it will build our preloaded config otherwise
+	fetches from the configFile and caches the results in variables.
 */
 private["_cfg","_type","_temp","_ret","_master","_class","_details","_displayName","_scope","_type","_str","_itemInfo","_timeStamp"];
 _cfg = [_this,0,"",[""]] call BIS_fnc_param;
-if(_cfg == "") exitWith {}; //Bad data passed, exit.
+if(EQUAL(_cfg,"")) exitWith {};
 _timeStamp = diag_tickTime;
-if(VAS_preload && {!isNil {VAS_pre_weapons}} && {!isNil {VAS_pre_magazines}} && {!isNil {VAS_pre_items}} && {!isNil {VAS_pre_backpacks}} && {!isNil {VAS_pre_glasses}}) exitWith {};
+if(VAS_preload && {!isNil "VAS_pre_weapons"} && {!isNil "VAS_pre_magazines"} && {!isNil "VAS_pre_items"} && {!isNil "VAS_pre_backpacks"} && {!isNil "VAS_pre_glasses"}) exitWith {};
 
-switch(_cfg) do
-{
-	case "CfgWeapons":
-	{
-		if(!isNil {uiNamespace getVariable "VASP_weapons"}) exitWith {["CfgWeapons"] call VAS_fnc_VASP;};
+switch(_cfg) do {
+	case "CfgWeapons": {
+		if(!isNil {GVAR_UINS "VASP_weapons"}) exitWith {["CfgWeapons"] call VAS_fnc_VASP};
+		VAS_pre_items = [];
+		VAS_pre_weapons = [];
 		_temp = [];
 		_ret = [];
 		_ret2 = [];
@@ -35,39 +36,48 @@ switch(_cfg) do
 			
 			_str = [_class,4] call VAS_fnc_KRON_StrLeft;
 				
-			if(_scope >= 2 && _str != "ACRE") then
-			{
-				switch (true) do
-				{
-					case (_type in [1,2,4,5,4096]):
-					{
-						if(_picture != "" && _displayName != "") then
-						{
-							if(_type == 4096 && (_itemInfo == 616 OR _AGMItem)) then {
-								_ret2 set[count _ret2,_class];
+			if(_scope >= 2 && !(EQUAL(_str,"ACRE"))) then {
+				switch (true) do {
+					case (_type in [1,2,4,5,4096]): {
+						if(_picture != "" && !(EQUAL(_displayName,""))) then {
+							if(EQUAL(_type,4096) && (EQUAL(_itemInfo,616) OR _AGMItem)) then {
+								if(_class in VAS_r_items) exitWith {}; //Exit the loop.
+								VAS_pre_items pushBack _class;
+								pushBackMNS("VAS_pre_items_misc",_class)
 							} else {
-								if(!(_displayName in _temp) && !(_base in VAS_r_weapons) && !(_class in VAS_r_weapons)) then
-								{
-									_temp set[count _temp,_displayName];
-									_ret set[count _ret,_class];
+								if(!(_displayName in _temp) && !(_base in VAS_r_weapons) && !(_class in VAS_r_weapons)) then {
+									_temp pushBack _displayName;
+									VAS_pre_weapons pushBack _class;
+									
+									//Cache filtered weapons
+									switch(_type) do {
+										case 1: {pushBackMNS("VAS_pre_weapons_rifles",_class)};
+										case 5: {pushBackMNS("VAS_pre_weapons_heavy",_class)};
+										case 4: {pushBackMNS("VAS_pre_weapons_launchers",_class)};
+										case 2: {pushBackMNS("VAS_pre_weapons_pistols",_class)};
+									};
 								};
 							};
 						};
 					};
 					
-					case (_type == 131072):
-					{
-						if(_picture != "" && !(_base in VAS_r_items) && !(_class in VAS_r_items)) then
-						{
-								_ret2 set[count _ret2,_class];
+					case (EQUAL(_type,131072)): {
+						if(_picture != "" && !(_base in VAS_r_items) && !(_class in VAS_r_items)) then {
+							VAS_pre_items pushBack _class;
+								
+							//Cache filtered items
+							switch(true) do {
+								case (EQUAL(_itemInfo,801)): {pushBackMNS("VAS_pre_items_uniforms",_class)};
+								case (EQUAL(_itemInfo,701)): {pushBackMNS("VAS_pre_items_vests",_class)};
+								case (EQUAL(_itemInfo,605)): {pushBackMNS("VAS_pre_items_headgear",_class)};
+								case (_itemInfo in [201,101,301,302]): {pushBackMNS("VAS_pre_items_attachments",_class)};
+								default {pushBackMNS("VAS_pre_items_misc",_class)};
+							};
 						};
 					};
 				};
 			};
 		} foreach _master;
-		
-		VAS_pre_weapons = _ret;
-		VAS_pre_items = _ret2;
 	};
 	
 	case "CfgMagazines":

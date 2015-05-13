@@ -54,7 +54,7 @@ _addToLb = {
 	};
 } foreach _magazines;
 
-_items = if (isNil "asdg_jointrails_fnc_getCompatibleAttachments") then {[_data] call VAS_fnc_accList} else {[_data] call asdg_jointrails_fnc_getCompatibleAttachments};
+_items = if (isNil "asdg_fnc_compatibleItems") then {[_data] call VAS_fnc_accList} else {[_data] call asdg_fnc_compatibleItems};
 
 _control = ((findDisplay 2500) displayCtrl 2851);
 lbClear _control;
